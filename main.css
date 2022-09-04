@@ -5,7 +5,7 @@ html{
     -o-background-size: cover;
     background-size: cover;
     --txt-color: azure;
-    --btn-color: #4c88af;
+    --btn-color: #2e7bad;
 
 }
 body {
@@ -28,7 +28,8 @@ header {
     border-color: rgb(255, 252, 252);
     color: var(--txt-color);
     padding: 7px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #txt-input {
