@@ -9,17 +9,19 @@
 </head>
 <body>
     <div class="flex-container">
-    <header>
-        <h1>
-            My Weather Forecast
-        </h1>
-    </header>
-    <main>Todays Weather</main>
-    <aside class="daily-weather">Daily Weather</aside>
-    <aside class="news">News</aside>
-    <footer>
-        My Footer
-    </footer>
+        <header class="flex-item">
+            <h1> My Weather Forecast </h1>
+            <form>
+                <input type = "text" id = "txt-input" placeholder="Enter city or Zip code" autofocus>
+                <button type = "submit" id = "submit-btn"> Submit</button>
+            </form>
+        </header>
+        <main class="flex-item">Todays Weather</main>
+        <aside class="daily-weather">Daily Weather</aside>
+        <aside class="news">News</aside>
+        <footer class="flex-item">
+            My Footer
+        </footer>
     </div>
 </body>
 </html>
