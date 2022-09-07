@@ -74,7 +74,9 @@ header {
     .flex-item,.daily-weather,.news{
         border-radius: 25px;
         background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.3351541300113795) 0%, rgba(0,161,255,0.2231093120842087) 100%);    color: black;
+        background: linear-gradient(90deg, rgba(2,0,36,0.3351541300113795) 0%,
+        rgba(0,161,255,0.2231093120842087) 100%);    
+        color: black;
         color: var(--txt-color);
 
     }
