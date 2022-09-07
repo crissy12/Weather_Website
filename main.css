@@ -44,7 +44,6 @@ header {
 }
 
 .daily-weather > div {
-    background-color: white;
     color: black;
     height: 130px;
     width: 50x;
@@ -56,8 +55,7 @@ header {
 }
 
 .todays-weather {
-    background-color: white;
-    color: black;
+    
     height: 800px;
     width: 50x;
     margin: 10px;
@@ -75,7 +73,8 @@ header {
     }
     .flex-item,.daily-weather,.news{
         border-radius: 25px;
-        background-color: rgba(0, 0, 0, 0.3);
+        background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.3351541300113795) 0%, rgba(0,161,255,0.2231093120842087) 100%);    color: black;
         color: var(--txt-color);
 
     }
