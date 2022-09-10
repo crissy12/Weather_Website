@@ -15,6 +15,23 @@
             <form>
                 <input type = "text" id = "txt-input" placeholder="Enter city or Zip code" autofocus>
                 <button type = "submit" id = "submit-btn"> Submit</button>
+                <script>
+                    //document.getElementById("submit-btn").onclick = myGeoFunc;
+                    document.getElementById('submit-btn').addEventListener("click", myGeoFunc);
+                    function myGeoFunc(pieceofshit) {
+                        pieceofshit.preventDefault();
+                        let URL = 'https://api.openweathermap.org/geo/1.0/direct?q='+document.getElementById('txt-input').value+'&limit=1&appid='+'sneakysneakyapikey'
+                        console.log(URL);
+                        fetch(URL)
+                            .then(response => {
+                                return response.json();
+                            })
+                            .then(geoJSON => {
+                                console.log(geoJSON);
+                               
+                            });
+                    }
+                </script>
             </form>
         </header>
         <main class="flex-item">
