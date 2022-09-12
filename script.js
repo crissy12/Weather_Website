@@ -10,7 +10,6 @@ function currentTime(){
     let todaysTime = `${month}/${day}/${year}`
     return todaysTime;
 }
-
 document.getElementById('today-date').textContent = currentTime();
 
 

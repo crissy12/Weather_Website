@@ -8,18 +8,30 @@ html{
     --btn-color: #2e7bad;
 
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    
 }
 
-header {
+.flex-header{
     font-weight: bold;
+    box-sizing: border-box;
+    width: 1920px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
+.search-bar{
+    align-content: flex-end;
+    margin-left: auto;
+}
+
+.flex-header-text{
+    margin-left: 120px;
 }
 
 #submit-btn {
@@ -30,6 +42,7 @@ header {
     padding: 7px;
     font-size: 12px;
     font-weight: bold;
+    margin-right: 120px;
 }
 
 #txt-input {
@@ -37,69 +50,87 @@ header {
     background-color: white;
     color: black;
     padding: 7px;
+    margin-right: 35px;
     border-radius: 3px;
     width: 250px;
     font-size: 14px;
     
 }
 
-.daily-weather > div {
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.flex-header,.daily-weather{
+    /*border-radius: 25px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.3351541300113795) 0%,
+    rgba(0,161,255,0.2231093120842087) 100%);    
     color: black;
-    height: 130px;
-    width: 50x;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 31px 35px -26px #080c21;
+    color: var(--txt-color);*/
+}
+header,footer {
+    background-color: aquamarine;
+}
+
+.weather-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
 }
 
 .todays-weather {
-    
     height: 800px;
     width: 50x;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    position: relative;
+    box-shadow: 0px 31px 35px -26px #080c21;
+    background-color: #BFD5FF;
+    margin-right: auto;
+    width: 996px;
+    border-radius: 8px;
+}
+
+.daily-weather {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 480px;  
+    border: 1px solid #E4E6EA;
+    border-radius: 8px;
+}
+
+.daily-weather > div {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 64px;
+    width: 416px;
+    height: 66px;
+    border-radius: 5px;
     box-shadow: 0px 31px 35px -26px #080c21;
 }
+
+footer {
+    width: 100%;
+    height: 150px;
+}
+
 
 @media all and (min-width: 768px) {
     .flex-container {
         flex-direction: row;
         flex-wrap: wrap;   
-        gap: 12px; 
-    }
-    .flex-item,.daily-weather,.news{
-        border-radius: 25px;
-        background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(2,0,36,0.3351541300113795) 0%,
-        rgba(0,161,255,0.2231093120842087) 100%);    
-        color: black;
-        color: var(--txt-color);
-
-    }
-    header, 
-    footer {
-        width: 100%;
-        height: 150px;
-    }
-    main {
-        flex: 2;
-        order: 2;
-        min-height: 70vh;
     }
     
-    .daily-weather {
-        order: 1;
-        flex: 1;
-    }
-    .news {
-        flex: 1;
-        order: 3;
-    }
-    footer {
-        order: 4;
-    }
 }
