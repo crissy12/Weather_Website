@@ -7,9 +7,7 @@ function myGeoFunc() {
     const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=${API_KEY}`)
         // Check if the response to the API call is not ok and throws an error, otherwise returns another promise
         .then((response) => { 
-            if (!response.ok) {
-                throw new Error ("Network response gave an error")
-            }
+            if (!response.ok) { throw new Error ("Network response gave an error") }
             // returns the promise for the json object from the API call
             return response.json();
         })
@@ -28,6 +26,9 @@ async function myWeatherFunc(){
     // Uses weatherData const to change values in the HTML doc
     document.getElementById('today-location').textContent = weatherData.name + ' , ' + weatherData.sys.country;
     document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.main.temp) -273)) + 32)) + '\xB0';
+    console.log(weatherData.weather[0].icon);
+    document.getElementById('today-weather-icon').src=`/assets/${weatherData.weather[0].icon}.png`;
+    
 } 
 
 
@@ -35,10 +36,6 @@ async function myWeatherFunc(){
 
 
 
-
-
-
- 
 // *****************************************************************
 // Another way of doing this
 // async function myGeoFunc() {
