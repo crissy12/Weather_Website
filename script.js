@@ -1,6 +1,19 @@
 import {API_KEY} from './apikey.js';
 document.getElementById('submit-btn').addEventListener("click", myWeatherFunc);    
 
+
+function currentTime(){
+    let time = new Date();
+    let day = time.getDate();
+    let month = time.getMonth() + 1;
+    let year = time.getFullYear();
+    let todaysTime = `${month}/${day}/${year}`
+    return todaysTime;
+}
+
+document.getElementById('today-date').textContent = currentTime();
+
+
 // Function to get geolocation data on the entered city name
 function myGeoFunc() {
     // Ties the fetch result to the constant res
@@ -26,9 +39,7 @@ async function myWeatherFunc(){
     // Uses weatherData const to change values in the HTML doc
     document.getElementById('today-location').textContent = weatherData.name + ' , ' + weatherData.sys.country;
     document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.main.temp) -273)) + 32)) + '\xB0';
-    console.log(weatherData.weather[0].icon);
     document.getElementById('today-weather-icon').src=`/assets/${weatherData.weather[0].icon}.png`;
-    
 } 
 
 
