@@ -10,24 +10,27 @@
   <crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header class="flex-header">
+        <h1 class="flex-header-text"> My Weather Forecast </h1>
+        <div class="search-bar">
+            <form onsubmit="return false;">
+                <input type = "text" id = "txt-input" placeholder="Enter city or Zip code" autofocus>
+                <button type = "submit" id = "submit-btn"> Submit</button>
+            </form>
+        </div>
+    </header>
     <div class="flex-container">
-        <header class="flex-header">
-            <h1 class="flex-header-text"> My Weather Forecast </h1>
-            <div class="search-bar">
-                <form onsubmit="return false;">
-                    <input type = "text" id = "txt-input" placeholder="Enter city or Zip code" autofocus>
-                    <button type = "submit" id = "submit-btn"> Submit</button>
-                </form>
-            </div>
-        </header>
-        <div class="weather-container">
-            <div class= "todays-weather">
-                <h2>Today's Weather</h2>
-                <div> <img id = "today-weather-icon" src="/assets/icons8-summer-96.png" alt="Sunny Icon"></div>
-                <h2 id="today-date">18,July,2022</h2>
-                <h3 id="today-location">New York</h3>
-                <h2 id="today-temp">75&deg</h2>
-            </div>
+        <div class="main-container">
+            <div class="todays-weather-container">
+                <h1>Weather for your estimated location, Amsterdam</h1>
+                <div class= "todays-weather">
+                    <h2>Today's Weather</h2>
+                    <div> <img id = "today-weather-icon" src="/assets/icons8-summer-96.png" alt="Sunny Icon"></div>
+                    <h2 id="today-date">18,July,2022</h2>
+                    <h3 id="today-location">New York</h3>
+                    <h2 id="today-temp">75&deg</h2>
+                </div>
+            </div>    
             <aside class="daily-weather">
                 <h2> Daily Weather </h2>
                 <div class="first-day"> 
