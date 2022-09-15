@@ -144,7 +144,7 @@ header,footer {
     flex-wrap: wrap;
 }
 
-.today-location {
+.today-location-container {
     display: flex;
     flex: 0 50%;
     border: 1px solid #080c21;
@@ -156,13 +156,13 @@ header,footer {
     border: 1px solid #080c21;
 }
 
-.today-temp{
+.today-temp-container{
     display: flex;
     flex: 0 100%;
     border: 1px solid #080c21;
 }
 
-.today-details{
+.today-details-container{
     display: flex;
     flex: 0 100%;
     border: 1px solid #080c21;

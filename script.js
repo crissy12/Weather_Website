@@ -39,7 +39,7 @@ async function myWeatherFunc(){
     document.getElementById('today-location').textContent = weatherData.name + ' , ' + weatherData.sys.country;
     document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.main.temp) -273)) + 32)) + '\xB0';
     document.getElementById('today-weather-icon').src=`/assets/${weatherData.weather[0].icon}.png`;
-    document.getElementById('weather-title').innerHTML = 'Weather for your estimated location, ' + weatherData.name;
+    document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + weatherData.name;
 } 
 
 
