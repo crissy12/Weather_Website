@@ -25,19 +25,35 @@
                 <h1 id="weather-title">Weather for your estimated location, Amsterdam</h1>
             </div>
             <div class="todays-weather-container">
-                <div class= "todays-weather">
-                    <h2>Today's Weather</h2>
-                    <div> <img id = "today-weather-icon" src="/assets/icons8-summer-96.png" alt="Sunny Icon"></div>
-                    <h2 id="today-date">18,July,2022</h2>
-                    <h3 id="today-location">New York</h3>
-                    <h2 id="today-temp">75&deg</h2>
+                <div class="today-weather-top">
+                        <!-- <div> <img id = "today-weather-icon" src="/assets/icons8-summer-96.png" alt="Sunny Icon"></div> -->
+                    <div class="weather-details">
+                        <div class="today-location">
+                            <h2>New York</h2>
+                        </div>
+                        <div class="today-date-container"> 
+                            <h2 id="today-date">18,July,2022</h2>
+                        </div>
+                        <div class="today-temp">
+                            <h2>75&deg</h2>
+                            <h2>Description here</h2>
+                        </div>
+                        <div class="today-details">
+                            <h2>Pressure here</h2>
+                            <h2>Rain Chance here</h2>
+                            <h2>Wind speed here</h2>
+                        </div>
+                    </div>
+                        <div class="weather-image-spot"> Weather Image here </div>
+                    </div>
+                <div class="today-weather-bottom">
+                    <div class="wind-speed-container">Wind is here</div>
+                    <div class="rain-speed-container">Rain is here</div>
+                    <div class="pressure-speed-container">Pressure is here</div>
+                    <div class="UV-speed-container">UV is here</div>
                 </div>
-                <div class="wind-speed-container">Wind is here</div>
-                <div class="rain-speed-container">Rain is here</div>
-                <div class="pressure-speed-container">Pressure is here</div>
-                <div class="UV-speed-container">UV is here</div>
             </div>    
-            <aside class="daily-weather-container">
+            <div class="daily-weather-container">
                 <h2> Daily Weather </h2>
                 <div class="first-day"> 
                     <div class = "date"> 18,July,2022</div>
@@ -73,7 +89,7 @@
                     <div class = "temp"> 75&deg; </div>
                     <div class = "daily-weather-icon"> Weather Icon Here</div>
                 </div>  
-            </aside>
+            </div>
         </div>
         <footer class="flex-item">
             My Footer
