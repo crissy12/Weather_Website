@@ -57,14 +57,15 @@ footer {
 }
 
 #submit-btn {
-    background-color: var(--btn-color);
-    border-radius: 10px;
-    border-color: rgb(255, 252, 252);
-    color: var(--txt-color);
-    padding: 7px;
-    font-size: 12px;
-    font-weight: bold;
+    border: none;
+    background: transparent;
+    cursor: pointer;
     margin-right: 120px;
+}
+
+#submit-btn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #txt-input {
@@ -74,8 +75,9 @@ footer {
     padding: 7px;
     margin-right: 35px;
     border-radius: 3px;
-    width: 250px;
+    width: 150px;
     font-size: 14px;
+    border-bottom: 3px solid darkgray;
     
 }
 
