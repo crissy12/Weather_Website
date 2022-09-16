@@ -1,6 +1,6 @@
 import {API_KEY} from './apikey.js';
-document.getElementById('submit-btn').addEventListener("click", myWeatherFunc);    
 
+document.getElementById('submit-btn').addEventListener("click", myWeatherFunc);    
 let time = new Date();
 
 function currentTime(){
@@ -92,10 +92,10 @@ async function myWeatherFunc(){
     let container = document.getElementsByClassName('date')
     for (let x = 0; x < container.length; x++){
         if(x == 0){
-            container[x].innerHTML = '<span style="white-space: pre-line">Tomorrow\n' + getDayandMonth(x) + ' </span>';
+            container[x].innerHTML = '<span style="white-space: pre-line">Tomorrow\n' + getDayandMonth(x+1) + ' </span>';
         }
         else{
-            container[x].innerHTML = '<span style="white-space: pre-line">' + getFutureDay(x) + '\n' + getDayandMonth(x) + '</span>';
+            container[x].innerHTML = '<span style="white-space: pre-line">' + getFutureDay(x+1) + '\n' + getDayandMonth(x+1) + '</span>';
     }
 
 } 

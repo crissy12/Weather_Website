@@ -176,8 +176,7 @@ footer {
 
 .today-weather-bottom-container {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-row: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     margin-top: 15px;
