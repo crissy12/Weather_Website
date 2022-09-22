@@ -80,14 +80,15 @@ async function myWeatherFunc(){
     const myData = await myGeoFunc();
     let {lat,lon} = myData[0];
     // Does a async call to the fetch API to get weather data
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${API_KEY}`);
     // Waits for weather promise to resolve and assigns weather data to the weatherData const
     const weatherData = await response.json();
+    console.log(weatherData);
     // Uses weatherData const to change values in the HTML doc
-    document.getElementById('today-location').textContent = weatherData.name + ' , ' + weatherData.sys.country;
-    document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.main.temp) -273)) + 32)) + '\xB0';
-    document.getElementById('today-weather-icon').src=`/assets/${weatherData.weather[0].icon}.png`;
-    document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + weatherData.name;
+    document.getElementById('today-location').textContent = weatherData.timezone;
+    document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
+    document.getElementById('today-weather-icon').src=`/assets/${weatherData.current.weather[0].icon}.png`;
+    document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
 
     let container = document.getElementsByClassName('date')
     for (let x = 0; x < container.length; x++){
