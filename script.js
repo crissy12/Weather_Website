@@ -62,7 +62,7 @@ function getDayandMonth(num){
 // Function to get geolocation data on the entered city name
 function myGeoFunc() {
     // Ties the fetch result to the constant res
-    const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=${process.env['API_KEY']}`)
+    const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=${process.env.API_KEY}`)
         // Check if the response to the API call is not ok and throws an error, otherwise returns another promise
         .then((response) => { 
             if (!response.ok) { throw new Error ("Network response gave an error") }
