@@ -1,5 +1,3 @@
-import {API_KEY} from './apikey.js';
-
 document.getElementById('submit-btn').addEventListener("click", myWeatherFunc);    
 let time = new Date();
 
