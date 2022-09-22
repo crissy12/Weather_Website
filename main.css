@@ -157,18 +157,22 @@ footer {
     display: flex;
     flex: 0 50%;
     border: 1px solid #080c21;
+    justify-content: flex-end;
 }
 
 .today-temp-container{
     display: flex;
     flex: 0 100%;
     border: 1px solid #080c21;
+    justify-content: center;
+    gap: 1em;
 }
 
 .today-details-container{
     display: flex;
     flex: 0 100%;
     border: 1px solid #080c21;
+    justify-content: space-between;
 }
 
 
@@ -196,8 +200,8 @@ footer {
     background-color: white;
     display: grid;
     padding: 3px;
-    gap: 32px;
-    width: 35%;  
+    min-height: 739px;
+    width: 30%;  
     border: 1px solid #E4E6EA;
     border-radius: 8px;
 }
@@ -207,11 +211,9 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 76px;
-    border-radius: 5px;
-    border: 2px solid black;
+    justify-content: center;
+    gap: 6em;
+    max-height: 76px;
 }
 
 /* For smaller screens */

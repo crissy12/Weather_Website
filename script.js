@@ -84,10 +84,18 @@ async function myWeatherFunc(){
     // Waits for weather promise to resolve and assigns weather data to the weatherData const
     const weatherData = await response.json();
     // Uses weatherData const to change values in the HTML doc
-    document.getElementById('today-location').textContent = weatherData.timezone;
+    document.getElementById('today-location').textContent = document.getElementById('txt-input').value;
     document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
     document.getElementById('today-weather-icon').src=`/assets/${weatherData.current.weather[0].icon}.png`;
     document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
+    document.getElementById('today-desc').textContent = weatherData.current.weather[0].description;
+    document.getElementById('top-preasure').textContent = `${weatherData.current.pressure} hpa`;
+    document.getElementById('top-humidity').textContent = `${weatherData.current.humidity}%`;
+    document.getElementById('top-windspeed').textContent =`${weatherData.current.wind_speed} km/h`
+    //console.log(weatherData);
+    //console.log(weatherData.current.wind_speed);
+    //console.log(weatherData.current.humidity);
+
 
     let container = document.getElementsByClassName('date')
     let tempList = document.querySelectorAll('div.temp');
