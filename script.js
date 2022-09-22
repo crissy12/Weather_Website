@@ -83,7 +83,6 @@ async function myWeatherFunc(){
     const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${API_KEY}`);
     // Waits for weather promise to resolve and assigns weather data to the weatherData const
     const weatherData = await response.json();
-    console.log(weatherData);
     // Uses weatherData const to change values in the HTML doc
     document.getElementById('today-location').textContent = weatherData.timezone;
     document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
@@ -91,12 +90,18 @@ async function myWeatherFunc(){
     document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
 
     let container = document.getElementsByClassName('date')
+    let tempList = document.querySelectorAll('div.temp');
+    let iconList = document.querySelectorAll('img#daily-weather-icon');
     for (let x = 0; x < container.length; x++){
         if(x == 0){
             container[x].innerHTML = '<span style="white-space: pre-line">Tomorrow\n' + getDayandMonth(x+1) + ' </span>';
+            tempList[x].innerHTML = Math.round(((1.8 * (parseInt(weatherData.daily[x].temp.day) -273)) + 32)) + '\xB0';
+            iconList[x].src=`/assets/${weatherData.daily[x].weather[0].icon}.png`;
         }
         else{
             container[x].innerHTML = '<span style="white-space: pre-line">' + getFutureDay(x+1) + '\n' + getDayandMonth(x+1) + '</span>';
+            tempList[x].textContent = Math.round(((1.8 * (parseInt(weatherData.daily[x].temp.day) -273)) + 32)) + '\xB0';
+            iconList[x].src=`/assets/${weatherData.daily[x].weather[0].icon}.png`;
     }
 
 } 
