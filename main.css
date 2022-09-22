@@ -17,7 +17,7 @@ html{
 /* Body to set primary font */
 
 body {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Footer and header CSS/Divs */
@@ -150,29 +150,29 @@ footer {
 .today-location-container {
     display: flex;
     flex: 0 50%;
-    border: 1px solid #080c21;
+    align-items: center;
 }
 
 .today-date-container{
     display: flex;
     flex: 0 50%;
-    border: 1px solid #080c21;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .today-temp-container{
     display: flex;
     flex: 0 100%;
-    border: 1px solid #080c21;
     justify-content: center;
+    align-items: center;
     gap: 1em;
 }
 
 .today-details-container{
     display: flex;
     flex: 0 100%;
-    border: 1px solid #080c21;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -212,8 +212,18 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6em;
-    max-height: 76px;
+    gap: 5em;
+    max-height: 56px;
+}
+.date {
+    width: 100px;
+    height: auto;
+    text-align: left;
+}
+
+#daily-weather-header{
+    margin-left: 6%;
+    margin-bottom: -5%;
 }
 
 /* For smaller screens */
