@@ -1,3 +1,7 @@
+enviroment: {
+    
+}
+
 document.getElementById('submit-btn').addEventListener("click", myWeatherFunc);    
 let time = new Date();
 
@@ -62,7 +66,7 @@ function getDayandMonth(num){
 // Function to get geolocation data on the entered city name
 function myGeoFunc() {
     // Ties the fetch result to the constant res
-    const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=${process.env.API_KEY}`)
+    const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=e3ea13cb868706acc26140753084d19f`)
         // Check if the response to the API call is not ok and throws an error, otherwise returns another promise
         .then((response) => { 
             if (!response.ok) { throw new Error ("Network response gave an error") }
@@ -78,7 +82,7 @@ async function myWeatherFunc(){
     const myData = await myGeoFunc();
     let {lat,lon} = myData[0];
     // Does a async call to the fetch API to get weather data
-    const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${process.env['API_KEY']}`);
+    const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=e3ea13cb868706acc26140753084d19f`);
     // Waits for weather promise to resolve and assigns weather data to the weatherData const
     const weatherData = await response.json();
     // Uses weatherData const to change values in the HTML doc
