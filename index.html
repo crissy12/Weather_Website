@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="script.js" type="module"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather Website</title>
-  <link rel="stylesheet" href="main.css">
-  <crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Website</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet"> 
+    <crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="flex-header">
@@ -28,6 +31,7 @@
                 <div class="today-weather-top-container">
                     <div class="weather-details-container">
                         <div class="today-location-container">
+                            <img src="assets/location-marker.png" alt="">
                             <h2 id="today-location">New York</h2>
                         </div>
                         <div class="today-date-container"> 
@@ -55,7 +59,7 @@
                 </div>
             </div>    
             <div class="daily-weather-container">
-                <h2> Daily Weather </h2>
+                <h2 id="daily-weather-header"> Daily Weather </h2>
                 <div class="daily-weather-details"> 
                     <div class = "date"> 
                         <span style="white-space: pre-line">
