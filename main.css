@@ -258,11 +258,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 1em;
+    margin-right: 3em;
     grid-column: 2 / 3;
     grid-row: 1 / span 3;
-    
-    
+}
+
+#wind-arrow{
+    width: 70px;
+    height: 70px;
+    filter: invert(42%) sepia(90%) saturate(4794%) hue-rotate(212deg) brightness(98%) contrast(100%);
 }
 
 

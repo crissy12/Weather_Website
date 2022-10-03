@@ -99,7 +99,9 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  document.getElementById('top-humidity').textContent = `humidity ${weatherData.current.humidity}%`;
  document.getElementById('windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
  document.getElementById('bottom-windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
+ document.getElementById('wind-arrow').style.transform = `rotate(${weatherData.current.wind_deg}deg)`;
  document.getElementById('uv-index').textContent =`${weatherData.current.uvi}`;
+ console.log(`rotate(${weatherData.current.wind_deg})`);
 
  
  let container = document.getElementsByClassName('date')
