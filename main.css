@@ -231,6 +231,41 @@ footer {
     background-color: #F1F3F8;
 }
 
+.today-details-div{
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    grid-template-rows: 1fr 1fr;
+}
+.item-1{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 15%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 18px;
+    color: #7E8289;
+}
+.item-2{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 15%;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-size: 22px;
+    color: #1b1b1b;
+}
+.item-3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1em;
+    grid-column: 2 / 3;
+    grid-row: 1 / span 3;
+    
+    
+}
+
+
 /* Daily Weather Div */
 
 .daily-weather-container {
