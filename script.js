@@ -94,9 +94,13 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  document.getElementById('today-weather-icon').src=`/assets/${weatherData.current.weather[0].icon}.png`;
  document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
  document.getElementById('today-desc').textContent = weatherData.current.weather[0].description;
- document.getElementById('top-preasure').textContent = `${weatherData.current.pressure} hpa`;
- document.getElementById('top-humidity').textContent = `${weatherData.current.humidity}%`;
- document.getElementById('top-windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
+ document.getElementById('pressure').textContent = `${weatherData.current.pressure} hpa`;
+ document.getElementById('bottom-pressure').textContent = `${weatherData.current.pressure} hpa`;
+ document.getElementById('top-humidity').textContent = `humidity ${weatherData.current.humidity}%`;
+ document.getElementById('windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
+ document.getElementById('bottom-windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
+ document.getElementById('uv-index').textContent =`${weatherData.current.uvi}`;
+
  
  let container = document.getElementsByClassName('date')
  let tempList = document.querySelectorAll('div.temp');
