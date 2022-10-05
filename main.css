@@ -163,6 +163,16 @@ footer {
 .weather-image-container{
     width: 50%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#today-weather-image{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    margin-right: 3%;
 }
 
 .weather-details-container {

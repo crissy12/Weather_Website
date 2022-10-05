@@ -89,9 +89,10 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
 .then (weatherData => {
 
  // Uses weatherData const to change values in the HTML doc
+ console.log(weatherData);
  document.getElementById('today-location').textContent = document.getElementById('txt-input').value;
  document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
- document.getElementById('today-weather-icon').src=`/assets/${weatherData.current.weather[0].icon}.png`;
+ document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
  document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
  document.getElementById('today-desc').textContent = weatherData.current.weather[0].description;
  document.getElementById('pressure').textContent = `${weatherData.current.pressure} hpa`;
@@ -101,7 +102,6 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  document.getElementById('bottom-windspeed').textContent =`${weatherData.current.wind_speed} km/h`;
  document.getElementById('wind-arrow').style.transform = `rotate(${weatherData.current.wind_deg}deg)`;
  document.getElementById('uv-index').textContent =`${weatherData.current.uvi}`;
- console.log(`rotate(${weatherData.current.wind_deg})`);
 
  
  let container = document.getElementsByClassName('date')
