@@ -89,7 +89,6 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
 .then (weatherData => {
 
  // Uses weatherData const to change values in the HTML doc
- console.log(weatherData);
  document.getElementById('today-location').textContent = document.getElementById('txt-input').value;
  document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
  document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
