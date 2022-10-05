@@ -183,22 +183,13 @@ footer {
 
 .today-location-container {
     display: flex;
-    flex: 0 50%;
+    flex: 0 100%;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     Font-size: 20px;
     gap: 4em;
     padding-left: 1em;
-}
-
-.today-date-container{
-    display: flex;
-    flex: 0 50%;
-    justify-content: flex-end;
-    align-items: center;
-    Font-size: 12px;
-    padding-right: 1em;
 }
 
 .today-temp-container{

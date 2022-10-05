@@ -89,10 +89,13 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
 .then (weatherData => {
 
  // Uses weatherData const to change values in the HTML doc
- document.getElementById('today-location').textContent = document.getElementById('txt-input').value;
+ let location = weatherData.timezone;
+ location = location.substring(location.indexOf("/")+1, location.length);
+ location = location.replace(/[^a-zA-Z0-9 ]/g, " ");
+ document.getElementById('today-location').textContent = location;
  document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
  document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
- document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + document.getElementById('txt-input').value;
+ document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + location;
  document.getElementById('today-desc').textContent = weatherData.current.weather[0].description;
  document.getElementById('pressure').textContent = `${weatherData.current.pressure} hpa`;
  document.getElementById('bottom-pressure').textContent = `${weatherData.current.pressure} hpa`;
