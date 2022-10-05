@@ -89,7 +89,6 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
 .then (weatherData => {
 
  // Uses weatherData const to change values in the HTML doc
- console.log(weatherData);
  let location = weatherData.timezone;
  location = location.substring(location.indexOf("/")+1, location.length);
  location = location.replace(/[^a-zA-Z0-9 ]/g, " ");
