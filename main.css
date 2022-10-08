@@ -25,14 +25,19 @@ body {
 
 .flex-header{
     display: flex;
-    flex-direction: row;
     align-items: center;
     font-weight: bold;
     box-sizing: border-box;
     width: auto;
     height: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+}
+
+.header-inner{
+    display: flex;
+    width: 100%;
+    max-width: 1508px;
+    padding: 10px;
 }
 
 header {
@@ -51,10 +56,6 @@ footer {
 .search-bar{
     align-content: flex-end;
     margin-left: auto;
-}
-
-.flex-header-text{
-    margin-left: 120px;
 }
 
 #submit-btn {
@@ -120,7 +121,7 @@ footer {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2px;
+    //gap: 2px;
     width: 60%;
     max-width: 996px;
 }
@@ -179,6 +180,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .today-location-container {
@@ -188,8 +191,6 @@ footer {
     align-items: center;
     justify-content: space-between;
     Font-size: 20px;
-    gap: 4em;
-    padding-left: 1em;
 }
 
 .today-temp-container{
@@ -210,8 +211,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    padding-left: 1em;
-    padding-right: 1em;
 }
 
 
@@ -279,7 +278,7 @@ footer {
     padding: 3px;
     max-width: 480px;
     min-height: 739px;
-    width: auto;
+    width: 100%;
     border: 1px solid #E4E6EA;
     border-radius: 8px;
     flex-grow: 1;
@@ -290,8 +289,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 5em;
+    justify-content: space-between;
     max-height: 56px;
 }
 .date {
@@ -307,10 +305,19 @@ footer {
 
 /* For smaller screens */
 
-@media all and (max-width: 768px) {
+@media (max-width: 768px) {
 
-    .flex-header-text{
-        margin-left: auto;
+    .header-inner{
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .flex-header-text, .search-bar{
+        margin-left: 0;
+    }
+
+    #txt-input{
+        margin-right: 0px;
     }
 
     .main-container {
@@ -329,19 +336,31 @@ footer {
         margin-right: auto;
     }
 
-    .daily-weather{
-        width: auto;
+    .today-weather-top-container{
+        flex-direction: column;
         height: auto;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 1em;
+        gap: 0.5em;
+    }
+    .weather-details-container{
+        width: auto;
+    }
+    .weather-image-container{
+        width: auto;
+    }
+    #today-weather-image{
+        margin-right: 0em;
+        max-width: 100%;
+    }
 
+    .today-details-div {
+        padding: 1em;
     }
-    
-    .daily-weather > div {
-        width: auto;
-        height: auto;
-        gap: auto;
-        margin-left: auto;
-        margin-right: auto;
+
+    .today-details-div > div {
+        margin-right: 0;
+        margin-left: 0;
+        align-items: center;
     }
+  
 }

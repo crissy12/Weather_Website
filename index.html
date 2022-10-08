@@ -14,6 +14,7 @@
 </head>
 <body>
     <header class="flex-header">
+        <div class="header-inner">
         <h1 class="flex-header-text"> My Weather Forecast </h1>
         <div class="search-bar">
             <form onsubmit="return false;">
@@ -21,19 +22,17 @@
                 <button type = "submit" id = "submit-btn"><img src="assets/Search icon.png" /></button>
             </form>
         </div>
+        </div>
     </header>
     <div class="flex-container">
         <div class="main-container">
-            <div class="main-header-container">
-                <h1 id="weather-txt">Weather for your estimated location, Amsterdam</h1>
-            </div>
+            <h1 id="weather-txt">Weather for your estimated location, Amsterdam</h1>
             <div class="todays-weather-container">
                 <div class="today-weather-top-container">
                     <div class="weather-details-container">
-                        <div class="today-location-container">
-                            
+                        <div class="today-location-container">                           
                             <h2 id="today-location">
-                                <img src="assets/location-marker.png" alt=""> New York</h2>
+                            <img src="assets/location-marker.png" alt=""> New York</h2>
                             <h2 id="today-date">18,July,2022</h2>
                         </div>
                         <div class="today-temp-container">
