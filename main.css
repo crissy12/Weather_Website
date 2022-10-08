@@ -233,7 +233,7 @@ footer {
 
 .today-details-div{
     display: grid;
-    grid-template-columns: 1fr 60%;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 .item-1{
@@ -261,11 +261,13 @@ footer {
     margin-right: 3em;
     grid-column: 2 / 3;
     grid-row: 1 / span 3;
+    overflow-wrap: anywhere;
+    word-wrap: break-all;
 }
 
 #wind-arrow{
-    width: 70px;
-    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
     filter: invert(42%) sepia(90%) saturate(4794%) hue-rotate(212deg) brightness(98%) contrast(100%);
 }
 
@@ -275,7 +277,7 @@ footer {
 .daily-weather-container {
     background-color: white;
     display: grid;
-    padding: 3px;
+    padding: 10px;
     max-width: 480px;
     min-height: 739px;
     width: 100%;
@@ -307,6 +309,9 @@ footer {
 
 @media (max-width: 768px) {
 
+    .flex-header{
+        height: auto;
+    }
     .header-inner{
         flex-wrap: wrap;
         height: auto;
@@ -342,6 +347,11 @@ footer {
         padding: 1em;
         gap: 0.5em;
     }
+
+    .today-weather-bottom-container{
+        grid-template-columns: auto;
+    }
+
     .weather-details-container{
         width: auto;
     }
