@@ -91,7 +91,6 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  let location = weatherData.timezone;
  location = location.substring(location.indexOf("/")+1, location.length);
  location = location.replace(/[^a-zA-Z0-9 ]/g, " ");
- console.log(weatherData);
  document.getElementById('today-location').textContent = location;
  document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
  document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
