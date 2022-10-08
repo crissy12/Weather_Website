@@ -87,11 +87,11 @@ function updatePage (lat,lon) {
 const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=e3ea13cb868706acc26140753084d19f`)
 .then((response) => response.json())
 .then (weatherData => {
-
  // Uses weatherData const to change values in the HTML doc
  let location = weatherData.timezone;
  location = location.substring(location.indexOf("/")+1, location.length);
  location = location.replace(/[^a-zA-Z0-9 ]/g, " ");
+ console.log(weatherData);
  document.getElementById('today-location').textContent = location;
  document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
  document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
@@ -123,17 +123,3 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
 }
 })
 }
-
-
-
-
-
-// *****************************************************************
-// Another way of doing this
-// async function myGeoFunc() {
-//     // Ties the fetch result to the constant res
-//     const res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=`+document.getElementById('txt-input').value+`&limit=1&appid=${API_KEY}`)
-//         // Check if the response to the API call is not ok and throws an error, otherwise returns another promise(not cash money)
-//     if (!res.ok) { throw new Error ("Network response gave an error") }
-//     console.log(res); 
-//     return res.json();

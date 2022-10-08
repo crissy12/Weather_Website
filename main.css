@@ -261,8 +261,6 @@ footer {
     margin-right: 3em;
     grid-column: 2 / 3;
     grid-row: 1 / span 3;
-    overflow-wrap: anywhere;
-    word-wrap: break-all;
 }
 
 #wind-arrow{
@@ -307,8 +305,13 @@ footer {
 
 /* For smaller screens */
 
-@media (max-width: 768px) {
+@media (max-width: 1272px){
+    .header-inner{
+        max-width: 1016px;
+    }
+}
 
+@media(max-width: 677px){
     .flex-header{
         height: auto;
     }
@@ -316,10 +319,12 @@ footer {
         flex-wrap: wrap;
         height: auto;
     }
-
     .flex-header-text, .search-bar{
         margin-left: 0;
     }
+}
+
+@media (max-width: 1272px) {
 
     #txt-input{
         margin-right: 0px;
