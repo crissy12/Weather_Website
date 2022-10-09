@@ -272,6 +272,10 @@ footer {
 
 /* Daily Weather Div */
 
+.outer-daily-weather-container{
+    width: 480px;
+}
+
 .daily-weather-container {
     background-color: white;
     display: grid;
@@ -305,9 +309,9 @@ footer {
 
 /* For smaller screens */
 
-@media (max-width: 1272px){
-    .header-inner{
-        max-width: 1016px;
+@media(max-width: 360px){
+    .today-weather-bottom-container{
+        grid-template-columns: auto;
     }
 }
 
@@ -324,7 +328,12 @@ footer {
     }
 }
 
+
 @media (max-width: 1272px) {
+
+    .header-inner{
+        max-width: 1016px;
+    }
 
     #txt-input{
         margin-right: 0px;
@@ -353,10 +362,6 @@ footer {
         gap: 0.5em;
     }
 
-    .today-weather-bottom-container{
-        grid-template-columns: auto;
-    }
-
     .weather-details-container{
         width: auto;
     }
@@ -376,6 +381,12 @@ footer {
         margin-right: 0;
         margin-left: 0;
         align-items: center;
+    }
+    
+    .outer-daily-weather-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
   
 }
