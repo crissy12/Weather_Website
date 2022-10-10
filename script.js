@@ -84,7 +84,7 @@ async function getDatafromSearch(){
 }
 
 function updatePage (lat,lon) {
-const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=e3ea13cb868706acc26140753084d19f`)
+const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=e3ea13cb868706acc26140753084d19f&units=imperial`)
 .then((response) => response.json())
 .then (weatherData => {
  // Uses weatherData const to change values in the HTML doc
@@ -92,7 +92,7 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  location = location.substring(location.indexOf("/")+1, location.length);
  location = location.replace(/[^a-zA-Z0-9 ]/g, " ");
  document.getElementById('today-location').textContent = location;
- document.getElementById('today-temp').textContent = Math.round(((1.8 * (parseInt(weatherData.current.temp) -273)) + 32)) + '\xB0';
+ document.getElementById('today-temp').textContent = Math.round(weatherData.current.temp) + '\xB0';
  document.getElementById('today-weather-image').src=`/assets/${weatherData.current.weather[0].main}.jpg`;
  document.getElementById('weather-txt').innerHTML = 'Weather for your estimated location, ' + location;
  document.getElementById('today-desc').textContent = weatherData.current.weather[0].description;
@@ -111,12 +111,12 @@ const response = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${la
  for (let x = 0; x < container.length; x++){
      if(x == 0){
          container[x].innerHTML = '<span style="white-space: pre-line">Tomorrow\n' + getDayandMonth(x+1) + ' </span>';
-         tempList[x].innerHTML = Math.round(((1.8 * (parseInt(weatherData.daily[x].temp.day) -273)) + 32)) + '\xB0';
+         tempList[x].innerHTML = Math.round(weatherData.daily[x].temp.day) + '\xB0';
          iconList[x].src=`/assets/${weatherData.daily[x].weather[0].icon}.png`;
      }
      else{
          container[x].innerHTML = '<span style="white-space: pre-line">' + getFutureDay(x+1) + '\n' + getDayandMonth(x+1) + '</span>';
-         tempList[x].textContent = Math.round(((1.8 * (parseInt(weatherData.daily[x].temp.day) -273)) + 32)) + '\xB0';
+         tempList[x].textContent = Math.round(weatherData.daily[x].temp.day) + '\xB0';
          iconList[x].src=`/assets/${weatherData.daily[x].weather[0].icon}.png`;
  }
 }
